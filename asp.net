@@ -1,0 +1,68 @@
+webform1.aspx
+|||
+
+<%@ Page Title="" Language="C#" MasterPageFile="~/Header.Master" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="WebApplication6.WebForm1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+</asp:Content>
+
+
+Header.master
+||
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Header.master.cs" Inherits="WebApplication6.Header" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+			<h2>Address Form</h2>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
+
+vehicles.aspx.cs
+||
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace WebApplication6
+{
+    public partial class Vehicles : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+        }
+    }
+}
+
+Vehicles.aspx
+||
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Vehicles.aspx.cs" MasterPageFile="~/Header.Master" Inherits="WebApplication6.Vehicles" %>
+
+<asp:Content ID="cnt1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+	<div>
+		<asp:Panel ID="Panel1" runat="server" GroupingText="Permanent Address">
+		</asp:Panel>
+		<asp:Panel ID="Panel2" runat="server" GroupingText="Temporary Address">
+		</asp:Panel>
+	</div>
+</asp:Content>
+
